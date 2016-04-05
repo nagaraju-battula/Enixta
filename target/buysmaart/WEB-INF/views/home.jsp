@@ -89,6 +89,10 @@
 		<section class="sidebar"> <!-- /.search form --> <!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
 			<li class="active"><a href="#"
+				onclick="submitForm('/buysmaart/searchhome.action', 'NO-DATA', 'containerdiv');">
+					<i class="fa fa-search"></i> <span>Search</span>
+			</a></li>
+			<li class="active"><a href="#"
 				onclick="submitForm('/buysmaart/showphonereviews.action', 'NO-DATA', 'containerdiv');">
 					<i class="fa fa-mobile-phone"></i> <span>Show phone types</span>
 			</a></li>

@@ -1,4 +1,4 @@
-Use demo;
+Use DEMO;
 
 drop table T_DEVICE_DETAILS;
 
@@ -28,7 +28,7 @@ values (105, 'Moto X Force', 'Moto X Force', 'Motorola', 53999, 'YES');
 
 commit;
 
-Use demo;
+Use DEMO;
 
 drop table T_DEVICE_REVIEWS;
 

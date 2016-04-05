@@ -45,12 +45,19 @@ public class ReviewDaoImpl implements ReviewDao {
 		sb.append("T_DEVICE_REVIEWS DTL ");
 		sb.append("WHERE ");
 		sb.append("DTL.F_ISENABLED = ? ");
-		sb.append("AND DTL.F_DEVICE_NAME = ? ");
-
+		if(deviceName != null){
+			sb.append("AND DTL.F_DEVICE_NAME = ? ");
+		}
+		
 		String query = sb.toString();
-
-		Object[] args = new Object[] { "NO", deviceName };
-
+		Object[] args = null;
+		
+		if(deviceName != null){
+			args = new Object[] { "NO", deviceName };
+		}else{
+			args = new Object[] { "NO"};
+		}
+		
 		try {
 
 			@SuppressWarnings("unchecked")
@@ -70,7 +77,7 @@ public class ReviewDaoImpl implements ReviewDao {
 	@Override
 	public List<YoutubeVideoReview> retriveReviewDetailsFromYoutube(
 			String reviewString, long maxResults) {
-		List<YoutubeVideoReview> youtubeReviewList = new ArrayList<>();
+		List<YoutubeVideoReview> youtubeReviewList = new ArrayList<YoutubeVideoReview>();
 		List<SearchResult> searchResultList = YoutubeReviewSearchUtils
 				.getVideoMetadata(reviewString + " review", maxResults);
 		Iterator<SearchResult> iteratorSearchResults = searchResultList

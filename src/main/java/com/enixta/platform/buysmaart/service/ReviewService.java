@@ -23,4 +23,8 @@ public interface ReviewService {
 		public void persistReviewDetails(List<YoutubeVideoReview> reviews);
 		
 		public boolean deleteReview(String videoId);
+		
+		public void initSearchableData();
+		
+		public List<String> getLuceneSearchResults(String query);
 }
